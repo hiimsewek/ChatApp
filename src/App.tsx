@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { ThemeContext, ThemeProvider } from "contexts";
 import { Button, Provider as PaperProvider } from "react-native-paper";
+import { useIsAuthenticated, useIsAppInitialized } from "hooks";
 
 export default function App() {
   return (
@@ -14,13 +15,19 @@ export default function App() {
 
 const Root = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const isAuthenticated = useIsAuthenticated();
+  const { isInitialized, onReady } = useIsAppInitialized({
+    theme,
+    isAuthenticated,
+  });
 
   return (
-    theme && (
+    isInitialized && (
       <>
         <StatusBar style={theme.dark ? "light" : "dark"} />
         <PaperProvider theme={theme}>
           <View
+            onLayout={onReady}
             style={[
               styles.container,
               { backgroundColor: theme.colors.background },
