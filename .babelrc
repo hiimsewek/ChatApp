@@ -1,0 +1,30 @@
+{
+  "presets": ["babel-preset-expo"],
+  "plugins": [
+    [
+      "module:react-native-dotenv",
+      {
+        "moduleName": "@env"
+      }
+    ],
+    ["react-native-paper/babel"],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "assets": "./assets",
+          "components": "./src/components",
+          "contexts": "./src/contexts",
+          "hooks": "./src/hooks",
+          "navigation": "./src/navigation",
+          "schemas": "./src/schemas",
+          "screens": "./src/screens",
+          "services": "./src/services",
+          "theme": "./src/theme",
+          "types": "./src/types",
+          "utils": "./src/utils"
+        }
+      }
+    ]
+  ]
+}
