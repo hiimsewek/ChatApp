@@ -10,3 +10,4 @@ export {
   StretchAndCenter,
   Wrapper,
 } from "./UI";
+export { ImagePicker } from "./ImagePicker";
