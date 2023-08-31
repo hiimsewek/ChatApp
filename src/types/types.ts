@@ -14,3 +14,13 @@ export type AuthenticatedStackParamsProp = {
   NewGroupChat: undefined;
   ChatRoom: { chatId: string };
 };
+
+export type LoginFormData = {
+  email: string;
+  password: string;
+};
+
+export type SignupFormData = LoginFormData & {
+  username: string;
+  confirmPassword: string;
+};
