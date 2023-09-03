@@ -24,3 +24,11 @@ export type SignupFormData = LoginFormData & {
   username: string;
   confirmPassword: string;
 };
+
+export type User = {
+  uid: string;
+  username: string;
+  photoURL: string;
+};
+
+export type UserWithoutUid = Omit<User, "uid">;

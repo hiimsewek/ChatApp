@@ -13,3 +13,4 @@ export {
   Wrapper,
 } from "./UI";
 export { ImagePicker } from "./ImagePicker";
+export { UserItem, UsersList } from "./SharedUserComponents";
