@@ -6,5 +6,6 @@ export { FormInput } from "./FormInput";
 export { FormTitle } from "./FormTitle";
 export { KeyboardAvoidance } from "./KeyboardAvoidance";
 export { Scrollable } from "./Scrollable";
+export { Searchbar } from "./Searchbar";
 export { StretchAndCenter } from "./StretchAndCenter";
 export { Wrapper } from "./Wrapper";

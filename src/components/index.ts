@@ -7,6 +7,7 @@ export {
   FormTitle,
   KeyboardAvoidance,
   Scrollable,
+  Searchbar,
   StretchAndCenter,
   Wrapper,
 } from "./UI";
