@@ -1,24 +1,5 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
-import { db } from "services/firebaseConfig";
 import { uriToBlob } from "utils/convert";
-
-export const docExist = async (
-  collectionName: string,
-  field: string,
-  value: string
-) => {
-  try {
-    const usersRef = collection(db, collectionName);
-
-    const q = query(usersRef, where(field, "==", value.toLowerCase()));
-    const querySnapshot = await getDocs(q);
-
-    return querySnapshot.docs.length !== 0;
-  } catch (e) {
-    throw new Error(e);
-  }
-};
 
 export const uploadFileAndGetUrl = async (
   pathDestination: string,
@@ -50,4 +31,16 @@ export const getFileUrl = async (path: string) => {
   } catch (e) {
     throw new Error(e);
   }
+};
+
+export const getAppropriatePhotoURl = async (
+  photo: string | null,
+  fileDestination: string,
+  fallbackFilePath: string
+) => {
+  const photoURL = photo
+    ? await uploadFileAndGetUrl(fileDestination, photo)
+    : await getFileUrl(fallbackFilePath);
+
+  return photoURL;
 };
