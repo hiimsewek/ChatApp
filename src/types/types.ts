@@ -32,3 +32,8 @@ export type User = {
 };
 
 export type UserWithoutUid = Omit<User, "uid">;
+
+export enum ChatType {
+  Private = 1,
+  Group = 2,
+}
