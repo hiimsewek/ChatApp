@@ -1,18 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Pressable } from "react-native";
 import { Avatar } from "react-native-paper";
 import { ThemeContext } from "contexts";
 import * as ExpoImagePicker from "expo-image-picker";
 
 type ImagePickerProps = {
-  size: number;
+  image: string | null;
   onImageSelected: (img: string) => void;
+  size: number;
   disabled?: boolean;
 };
 
-const ImagePicker = ({ size, onImageSelected, disabled }: ImagePickerProps) => {
-  const [image, setImage] = useState<string | null>(null);
-
+const ImagePicker = ({
+  image,
+  onImageSelected,
+  size,
+  disabled,
+}: ImagePickerProps) => {
   const {
     theme: { colors },
   } = useContext(ThemeContext);
@@ -26,7 +30,6 @@ const ImagePicker = ({ size, onImageSelected, disabled }: ImagePickerProps) => {
     });
 
     if (!result.canceled) {
-      setImage(result.assets[0].uri);
       onImageSelected(result.assets[0].uri);
     }
   };

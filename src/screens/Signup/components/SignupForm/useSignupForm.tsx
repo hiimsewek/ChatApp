@@ -76,6 +76,7 @@ const useSignupForm = () => {
 
   return {
     errors,
+    selectedImageUri,
     handleImageSelected,
     handleSubmit,
     isSubmitting,

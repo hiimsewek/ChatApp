@@ -27,6 +27,7 @@ const SignupForm = () => {
     handleSubmit,
     isSubmitting,
     isValid,
+    selectedImageUri,
     touched,
     values,
   } = useSignupForm();
@@ -45,8 +46,9 @@ const SignupForm = () => {
         <FormTitle>Sign up</FormTitle>
         <Center style={{ marginBottom: 10 }}>
           <ImagePicker
-            size={100}
+            image={selectedImageUri}
             onImageSelected={handleImageSelected}
+            size={100}
             disabled={isSubmitting}
           />
         </Center>
