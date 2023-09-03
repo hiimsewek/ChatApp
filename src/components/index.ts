@@ -6,6 +6,7 @@ export {
   FormInput,
   FormTitle,
   KeyboardAvoidance,
+  PressableItem,
   Scrollable,
   Searchbar,
   StretchAndCenter,

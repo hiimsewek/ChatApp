@@ -5,6 +5,7 @@ export { FormButton } from "./FormButton";
 export { FormInput } from "./FormInput";
 export { FormTitle } from "./FormTitle";
 export { KeyboardAvoidance } from "./KeyboardAvoidance";
+export { PressableItem } from "./PressableItem";
 export { Scrollable } from "./Scrollable";
 export { Searchbar } from "./Searchbar";
 export { StretchAndCenter } from "./StretchAndCenter";
