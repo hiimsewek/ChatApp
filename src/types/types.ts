@@ -37,3 +37,16 @@ export enum ChatType {
   Private = 1,
   Group = 2,
 }
+
+export type MessageData = {
+  text: string;
+  sentAt: Date;
+  isRead: boolean;
+};
+
+export type ChatInfo = {
+  id: string;
+  photoURL: string;
+  name: string;
+  message: MessageData;
+};
