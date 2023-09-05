@@ -14,6 +14,7 @@ const generateMessageOnCreate = (members: User[]) => {
   return {
     text: `${auth.currentUser.displayName} added ${memberNames} to the group chat`,
     sentAt: serverTimestamp(),
+    readBy: [auth.currentUser.uid],
   };
 };
 
@@ -31,7 +32,6 @@ export const createGroupChatDoc = async (
     members: [auth.currentUser.uid, ...membersIds],
     owner: auth.currentUser.uid,
     recentMessage: generateMessageOnCreate(groupMembers),
-    lastModifiedAt: serverTimestamp(),
     chatType: ChatType.Group,
   });
 };
