@@ -1,4 +1,7 @@
+import { doc, getDoc } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import { db } from "services/firebaseConfig";
+import { User } from "types";
 import { uriToBlob } from "utils/convert";
 
 export const uploadFileAndGetUrl = async (
@@ -43,4 +46,15 @@ export const getAppropriatePhotoURl = async (
     : await getFileUrl(fallbackFilePath);
 
   return photoURL;
+};
+
+export const getChatUserDetails = async (uid: string) => {
+  const docRef = doc(db, "users", uid);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    const { username, photoURL } = docSnap.data() as User;
+
+    return { uid, username, photoURL };
+  }
 };
