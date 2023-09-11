@@ -67,3 +67,15 @@ export type ChatsDocData = {
   photoURL: string;
   recentMessage: MessageDocData;
 };
+
+export type ChatRoomInfo = Omit<ChatsDocData, "members"> & {
+  members: User[];
+};
+
+export type Role = "sender" | "receiver" | "action";
+
+export type MessageData = Omit<MessageDocData, "sentAt"> & {
+  id: string;
+  sentAt: Date;
+  role: Role;
+};
