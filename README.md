@@ -1,6 +1,6 @@
 # ChatApp
 
-ChatApp is a simple React Native chat application that utilizes Firebase and Algolia for managing chats and searching for messages. With this application, you can communicate with other users in real-time.
+ChatApp is a simple React Native chat application that utilizes Firebase and Algolia for managing chats and searching for users. With this application, you can communicate with other users in real-time.
 
 ## Table of contents
 * [Features](#features)
