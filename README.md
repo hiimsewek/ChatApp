@@ -67,10 +67,10 @@ npx expo start
 
 ## Screenshots
 
-<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/95577ff2-7362-4afc-a6c9-a0a2c2651973" width="45%"></img>
-<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/6f28e67d-ff23-4429-a37a-2b390b8a3307" width="45%"></img>
-<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/13d9742e-4f06-4c92-bb92-476ffb0f5659" width="45%"></img>
-<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/41938045-d778-435b-b89d-09674cd420b3" width="45%"></img>
-<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/a265fdfb-af71-4996-a711-c118345f1a47" width="45%"></img>
-<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/38df1061-fbfc-4dda-ab89-60b7164e4bef" width="45%"></img>
-<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/a8f0c9df-ad9a-4ca8-a1ca-8f8c60394213" width="45%"></img>
+<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/008e55ff-7d05-4aa4-924f-160dff9dd826" width="45%"></img>
+<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/9451e9c8-1908-4d55-bd86-d45f8f0f4c25" width="45%"></img>
+<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/ef68b8ae-7c2a-4c85-b286-e3e850283b3c" width="45%"></img>
+<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/38362647-9363-431f-8648-c1aeb34ffc05" width="45%"></img>
+<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/78e23a66-8620-4e4a-90d2-4e8e5a5696ad" width="45%"></img>
+<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/fa698eed-cbc8-4baa-ad62-611a3ca5290b" width="45%"></img>
+<img src="https://github.com/hiimsewek/ChatApp/assets/62641653/1e580eed-3af1-42bf-9de1-a9c31d35802d" width="45%"></img>
