@@ -1,26 +1,6 @@
-import {
-  DocumentData,
-  QuerySnapshot,
-  Timestamp,
-  doc,
-  getDoc,
-} from "firebase/firestore";
+import { DocumentData, QuerySnapshot, doc, getDoc } from "firebase/firestore";
 import { auth, db } from "services/firebaseConfig";
-import { ChatInfo, ChatType, UserWithoutUid } from "types";
-
-type ChatsDocData = {
-  chatType: ChatType;
-  groupName: string;
-  members: string[];
-  owner: string;
-  photoURL: string;
-  recentMessage: {
-    text: string;
-    sentBy: string;
-    sentAt: Timestamp;
-    readBy: string[];
-  };
-};
+import { ChatInfo, ChatType, ChatsDocData, UserWithoutUid } from "types";
 
 const extractPrivateChatUserUid = (members: string[]) =>
   members.find((el) => el !== auth.currentUser.uid);
@@ -45,7 +25,7 @@ export const processChatsSnapshotData = async (
   return await Promise.all(
     snapshot.docs.map(async (doc) => {
       const {
-        groupName,
+        name,
         photoURL,
         recentMessage: { text, sentBy, sentAt, readBy },
         chatType,
@@ -65,7 +45,7 @@ export const processChatsSnapshotData = async (
 
       const chatInfo: ChatInfo = {
         id: doc.id,
-        name: chatIsPrivate ? chatUserName : groupName,
+        name: chatIsPrivate ? chatUserName : name,
         photoURL: chatIsPrivate ? chatUserPhotoURL : photoURL,
         message: {
           text: sentBy === auth.currentUser.uid ? `You: ${text}` : text,

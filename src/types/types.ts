@@ -1,3 +1,4 @@
+import { Timestamp } from "firebase/firestore";
 import { MD3Theme } from "react-native-paper";
 import { NavigationTheme } from "react-native-paper/lib/typescript/src/types";
 
@@ -49,4 +50,20 @@ export type ChatInfo = {
   photoURL: string;
   name: string;
   message: MessageData;
+};
+
+export type MessageDocData = {
+  text: string;
+  sentBy: string;
+  sentAt: Timestamp;
+  readBy: string[];
+};
+
+export type ChatsDocData = {
+  chatType: ChatType;
+  name: string;
+  members: string[];
+  owner: string;
+  photoURL: string;
+  recentMessage: MessageDocData;
 };
