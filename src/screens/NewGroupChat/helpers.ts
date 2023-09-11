@@ -27,7 +27,7 @@ export const createGroupChatDoc = async (
   const membersIds = groupMembers.map((el) => el.uid);
 
   await setDoc(doc(db, "chats", groupId), {
-    groupName,
+    name: groupName,
     photoURL,
     members: [auth.currentUser.uid, ...membersIds],
     owner: auth.currentUser.uid,
@@ -42,7 +42,5 @@ export const createInitialMessagesDoc = async (
 ) => {
   const messagesRef = collection(db, "chatRooms", groupId, "messages");
 
-  await addDoc(messagesRef, {
-    message: generateMessageOnCreate(groupMembers),
-  });
+  await addDoc(messagesRef, generateMessageOnCreate(groupMembers));
 };
