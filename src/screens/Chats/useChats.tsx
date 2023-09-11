@@ -7,6 +7,7 @@ import { AuthenticatedStackParamsProp, ChatInfo } from "types";
 import { HeaderRightActions } from "./components";
 import { Avatar } from "react-native-paper";
 import { processChatsSnapshotData, sortChatsFromLatest } from "./helpers";
+import { Platform } from "react-native";
 
 type NavigationType = NativeStackNavigationProp<AuthenticatedStackParamsProp>;
 
@@ -25,7 +26,12 @@ const useChats = () => {
 
     navigation.setOptions({
       title: "",
-      headerLeft: () => <Avatar.Image size={46} source={{ uri: userPhoto }} />,
+      headerLeft: () => (
+        <Avatar.Image
+          size={Platform.OS === "ios" ? 40 : 46}
+          source={{ uri: userPhoto }}
+        />
+      ),
       headerRight: () => <HeaderRightActions />,
     });
 
