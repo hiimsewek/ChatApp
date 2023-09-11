@@ -3,9 +3,9 @@ import React from "react";
 import { formatTime, isPastYear } from "utils/time";
 import { Text } from "react-native-paper";
 import styles from "./styles";
-import { MessageData } from "types";
+import { MessageInfo } from "types";
 
-const MessageDetails = ({ isRead, sentAt, text }: MessageData) => {
+const MessageDetails = ({ isRead, sentAt, text }: MessageInfo) => {
   const messageWidth = isPastYear(sentAt) ? "65%" : "80%";
   const fontWeight = isRead ? "400" : "bold";
 

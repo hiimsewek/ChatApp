@@ -39,7 +39,7 @@ export enum ChatType {
   Group = 2,
 }
 
-export type MessageData = {
+export type MessageInfo = {
   text: string;
   sentAt: Date;
   isRead: boolean;
@@ -49,7 +49,7 @@ export type ChatInfo = {
   id: string;
   photoURL: string;
   name: string;
-  message: MessageData;
+  message: MessageInfo;
 };
 
 export type MessageDocData = {
