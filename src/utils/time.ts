@@ -25,3 +25,15 @@ export const formatTime = (date: Date) => {
     return dayjs(date).format("D MMM");
   }
 };
+
+export const formatTimeExtended = (date: Date) => {
+  if (isToday(date)) {
+    return dayjs(date).format("HH:mm");
+  } else if (!hasWeekPassedFromNow(date)) {
+    return dayjs(date).format("ddd [at] HH:mm");
+  } else if (isPastYear(date)) {
+    return dayjs(date).format("D MMM YYYY [at] HH:mm");
+  } else {
+    return dayjs(date).format("D MMM [at] HH:mm");
+  }
+};
