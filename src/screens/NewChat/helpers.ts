@@ -1,12 +1,12 @@
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { auth, db } from "services/firebaseConfig";
-import { ChatType } from "types";
+import { ChatType, ChatsDocData } from "types";
 
 export const getChatIdIfExists = async (uid: string) => {
   try {
     const q = query(
       collection(db, "chats"),
-      where("members", "array-contains", uid),
+      where("members", "array-contains", auth.currentUser.uid),
       where("chatType", "==", 1)
     );
 
@@ -14,9 +14,13 @@ export const getChatIdIfExists = async (uid: string) => {
 
     let chatId: string | undefined;
 
-    if (querySnapshot.docs.length > 0) {
-      chatId = querySnapshot.docs[0].id;
-    }
+    const chatIndex = querySnapshot.docs.findIndex((doc) => {
+      const { members } = doc.data() as ChatsDocData;
+      return members.includes(uid);
+    });
+
+    if (chatIndex >= 0) chatId = querySnapshot.docs[chatIndex].id;
+
     return chatId;
   } catch (e) {
     throw new Error(e);
